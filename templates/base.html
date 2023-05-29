@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adopt a Pet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Adopt a Pet</h1>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

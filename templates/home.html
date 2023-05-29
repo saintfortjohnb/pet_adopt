@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Available Pets:</h3>
+<ul>
+    {% for pet in pets %}
+        <li>
+            <a href="{{ url_for('show_edit_form', pet_id=pet.id) }}" class="button-btn">{{ pet.name }}</a>
+            {% if pet.photo_url %}
+                <br><img src="{{ pet.photo_url }}" alt="{{ pet.name }}">
+            {% endif %}
+            {% if pet.available %}
+                <br><strong>Available</strong>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('show_add_form') }}" class="button-btn">Add a Pet</a>
+{% endblock %}
